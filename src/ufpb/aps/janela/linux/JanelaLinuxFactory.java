@@ -8,6 +8,19 @@ import ufpb.aps.janela.factory.JanelaFactory;
 
 public class JanelaLinuxFactory implements JanelaFactory {
 
+	private static JanelaFactory singleton;
+	
+	private JanelaLinuxFactory() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public static JanelaFactory getInstance(){
+		if(singleton == null){
+			singleton = new JanelaLinuxFactory();
+		}
+		return singleton;
+	}
+	
 	@Override
 	public Janela criarJanela() {
 		return new JanelaLinux();

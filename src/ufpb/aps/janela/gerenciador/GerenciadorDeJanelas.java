@@ -8,13 +8,13 @@ import ufpb.aps.janela.windows.JanelaWinFactory;
 
 public class GerenciadorDeJanelas {
 	
-	public Janela criarJanela(JanelaFactory janela){
+	public Janela criarJanela(JanelaFactory janelaFactory){
 		
-		Janela janelaRetorno = janela.criarJanela();
-		BarraDeTitulo barraTituloRetorno = janela.criarBarraDeTitulo();
-		BarraMenu barraMenuRetorno = janela.criarBarraMenu();
-		barraMenuRetorno.addItemMenu(janela.criaItemMenu("Arquivo"));
-		barraMenuRetorno.addItemMenu(janela.criaItemMenu("Editar"));
+		Janela janelaRetorno = janelaFactory.criarJanela();
+		BarraDeTitulo barraTituloRetorno = janelaFactory.criarBarraDeTitulo();
+		BarraMenu barraMenuRetorno = janelaFactory.criarBarraMenu();
+		barraMenuRetorno.addItemMenu(janelaFactory.criaItemMenu("Arquivo"));
+		barraMenuRetorno.addItemMenu(janelaFactory.criaItemMenu("Editar"));
 		
 		janelaRetorno.add(barraTituloRetorno);
 		janelaRetorno.add(barraMenuRetorno);

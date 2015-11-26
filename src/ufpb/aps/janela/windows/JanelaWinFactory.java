@@ -7,8 +7,23 @@ import ufpb.aps.janela.factory.Janela;
 import ufpb.aps.janela.factory.JanelaFactory;
 
 public class JanelaWinFactory implements JanelaFactory{
-
-	@Override
+	
+	private static JanelaFactory singleton;
+	
+	
+	private JanelaWinFactory(){
+		
+	}
+	
+	public static JanelaFactory getInstance(){
+		
+		if(singleton == null){
+			singleton = new JanelaWinFactory();
+		}
+		
+		return singleton;
+	}
+	
 	public Janela criarJanela() {
 		return new JanelaWin();
 	}

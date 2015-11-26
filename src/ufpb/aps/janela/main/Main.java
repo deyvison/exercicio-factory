@@ -11,8 +11,12 @@ public class Main {
 		
 		GerenciadorDeJanelas gerenciador = new GerenciadorDeJanelas();
 		
-		Janela janelaWindows = gerenciador.criarJanela(new JanelaWinFactory());
-		Janela janelaLinux = gerenciador.criarJanela(new JanelaLinuxFactory());
+		Janela janelaWindows = gerenciador.criarJanela(JanelaWinFactory.getInstance());
+
+		Janela janelaLinux = gerenciador.criarJanela(JanelaLinuxFactory.getInstance());
+		janelaLinux = gerenciador.criarJanela(JanelaLinuxFactory.getInstance());
+		janelaLinux = gerenciador.criarJanela(JanelaLinuxFactory.getInstance());
+		janelaLinux = gerenciador.criarJanela(JanelaLinuxFactory.getInstance());
 		
 	}
 }
